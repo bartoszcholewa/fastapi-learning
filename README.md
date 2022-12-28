@@ -17,13 +17,36 @@ Based on **Building Python Microserices with FastAPI - Sherwin John C. Tragura**
 
 1. Install pip-compile
 ```shell
-pip install pip-tools==6.12.1
-make pip
+$ pip install pip-tools==6.12.1
+$ make pip
 ```
 2. Install pre-commit
 ```shell
-pip install pre-commit==2.21.0
-pre-commit install
-make pre-commit
+$ pip install pre-commit==2.21.0
+$ pre-commit install
+$ make pre-commit
 ```
 ***
+## Usefull commands:
+Run application locally
+```shell
+$ cd ch01/
+$ uvicorn main:app --reload
+
+INFO:     Will watch for changes in these directories: ['~/fastapi-learning/ch01']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [123669] using WatchFiles
+INFO:     Started server process [123671]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+```
+***
+
+## Chapter 1
+- Technical requirements
+- Setting up the development environment
+- Initializing and configuring FastAPI
+- Designing and implementing REST APIs
+- Managing user requests and server response
+- Handling form parameters
+- Managing cookies
