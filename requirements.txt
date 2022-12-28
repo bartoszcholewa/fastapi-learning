@@ -4,26 +4,68 @@
 #
 #    pip-compile
 #
+anyio==3.6.2
+    # via
+    #   httpcore
+    #   starlette
+    #   watchfiles
+bcrypt==4.0.1
+    # via -r requirements.in
 build==0.9.0
     # via pip-tools
+certifi==2022.12.7
+    # via
+    #   httpcore
+    #   httpx
 cfgv==3.3.1
     # via pre-commit
 click==8.1.3
-    # via pip-tools
+    # via
+    #   pip-tools
+    #   uvicorn
 distlib==0.3.6
     # via virtualenv
+dnspython==2.2.1
+    # via email-validator
+email-validator==1.3.0
+    # via fastapi
+fastapi[all]==0.88.0
+    # via -r requirements.in
 filelock==3.8.2
     # via virtualenv
 flake8==6.0.0
     # via -r requirements.in
+h11==0.14.0
+    # via
+    #   httpcore
+    #   uvicorn
+httpcore==0.16.3
+    # via httpx
+httptools==0.5.0
+    # via uvicorn
+httpx==0.23.1
+    # via fastapi
 identify==2.5.11
     # via pre-commit
+idna==3.4
+    # via
+    #   anyio
+    #   email-validator
+    #   rfc3986
 isort==5.11.4
     # via -r requirements.in
+itsdangerous==2.1.2
+    # via fastapi
+jinja2==3.1.2
+    # via fastapi
+markupsafe==2.1.1
+    # via jinja2
 mccabe==0.7.0
     # via flake8
 nodeenv==1.7.0
     # via pre-commit
+orjson==3.8.3
+    # via fastapi
 packaging==22.0
     # via build
 pep517==0.13.0
@@ -36,16 +78,52 @@ pre-commit==2.21.0
     # via -r requirements.in
 pycodestyle==2.10.0
     # via flake8
+pydantic==1.10.2
+    # via fastapi
 pyflakes==3.0.1
     # via flake8
+python-dotenv==0.21.0
+    # via uvicorn
+python-multipart==0.0.5
+    # via
+    #   -r requirements.in
+    #   fastapi
 pyyaml==6.0
-    # via pre-commit
+    # via
+    #   fastapi
+    #   pre-commit
+    #   uvicorn
+rfc3986[idna2008]==1.5.0
+    # via httpx
+six==1.16.0
+    # via python-multipart
+sniffio==1.3.0
+    # via
+    #   anyio
+    #   httpcore
+    #   httpx
+starlette==0.22.0
+    # via fastapi
 tomli==2.0.1
     # via
     #   build
     #   pep517
+typing-extensions==4.4.0
+    # via pydantic
+ujson==5.6.0
+    # via fastapi
+uvicorn[standard]==0.20.0
+    # via
+    #   -r requirements.in
+    #   fastapi
+uvloop==0.17.0
+    # via uvicorn
 virtualenv==20.17.1
     # via pre-commit
+watchfiles==0.18.1
+    # via uvicorn
+websockets==10.4
+    # via uvicorn
 wheel==0.38.4
     # via pip-tools
 

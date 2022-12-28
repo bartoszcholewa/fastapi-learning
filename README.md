@@ -27,3 +27,7 @@ pre-commit install
 make pre-commit
 ```
 ***
+
+## Chapter 1
+- Technical requirements
+- Setting up the development environment
