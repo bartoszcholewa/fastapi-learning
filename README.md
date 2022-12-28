@@ -46,3 +46,7 @@ INFO:     Application startup complete.
 - Technical requirements
 - Setting up the development environment
 - Initializing and configuring FastAPI
+- Designing and implementing REST APIs
+- Managing user requests and server response
+- Handling form parameters
+- Managing cookies
