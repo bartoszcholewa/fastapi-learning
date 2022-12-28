@@ -50,3 +50,13 @@ INFO:     Application startup complete.
 - Managing user requests and server response
 - Handling form parameters
 - Managing cookies
+
+## Chapter 2
+- Technical requirements
+- Structuring and organizing huge projects
+- Managing API-related exception
+- Converting objects to JSON-compatible types
+- Managing API responses
+- Creating background processes
+- Using asynchronous path operations
+- Applying middleware to filter path operations
