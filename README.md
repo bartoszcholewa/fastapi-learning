@@ -1,11 +1,14 @@
 # Building Python Microservices with FastAPI
+
 ***
 Based on **Building Python Microserices with FastAPI - Sherwin John C. Tragura** [packt]
 
 [Link to the book](https://www.packtpub.com/product/building-python-microservices-with-fastapi/9781803245966)
 
 ***
+
 ## Initial setup
+
 - PyCharm Professional 2022.3
 - Python 3.10
 - setuptools 65.6.3
@@ -16,19 +19,26 @@ Based on **Building Python Microserices with FastAPI - Sherwin John C. Tragura**
 - pip-tools 6.12.1
 
 1. Install pip-compile
+
 ```shell
 $ pip install pip-tools==6.12.1
 $ make pip
 ```
+
 2. Install pre-commit
+
 ```shell
 $ pip install pre-commit==2.21.0
 $ pre-commit install
 $ make pre-commit
 ```
+
 ***
+
 ## Usefull commands:
+
 Run application locally
+
 ```shell
 $ cd ch01/
 $ uvicorn main:app --reload
@@ -40,9 +50,11 @@ INFO:     Started server process [123671]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 ```
+
 ***
 
-## Chapter 1
+## Chapter 1 - Setting Up FastAPI for Starters
+
 - Technical requirements
 - Setting up the development environment
 - Initializing and configuring FastAPI
@@ -51,7 +63,8 @@ INFO:     Application startup complete.
 - Handling form parameters
 - Managing cookies
 
-## Chapter 2
+## Chapter 2 - Exploring the Core Fatures
+
 - Technical requirements
 - Structuring and organizing huge projects
 - Managing API-related exception
@@ -60,3 +73,29 @@ INFO:     Application startup complete.
 - Creating background processes
 - Using asynchronous path operations
 - Applying middleware to filter path operations
+
+## Chapter 3 - Investigating Dependency Injection
+
+- Applying IoC/DI
+- Exploring ways of injecting dependencies
+- Organizing a project based on dependencies
+- Using third-party containers
+- Scoping of dependable
+
+## Chapter 4 - Building the Microservice Application
+
+- Applying the decomposition pattern
+- Mounting the submodules
+- Creating a common gateway
+- Implementing the main endpoint
+- Evaluating the microservice ID
+- Applying the exception handlers
+- Centralizing te logging mechanism
+- Building the logging middleware
+- Using the httpx module
+- Using the requests module
+- Applying the domain modeling approach
+- Creating the layers
+- Identifying the domain models
+- Building the repository and service layers
+- Managing a microservice's configuration details
