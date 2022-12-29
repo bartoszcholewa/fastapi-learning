@@ -9,3 +9,9 @@ start1:
 
 start2:
 	uvicorn ch02.main:app --workers 5 --reload
+
+start3:
+	cd ch03 && uvicorn main:app --reload
+
+start4:
+	cd ch04 && uvicorn main:app --reload

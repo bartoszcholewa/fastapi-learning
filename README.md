@@ -42,7 +42,7 @@ INFO:     Application startup complete.
 ```
 ***
 
-## Chapter 1
+## Chapter 1 - Setting Up FastAPI for Starters
 - Technical requirements
 - Setting up the development environment
 - Initializing and configuring FastAPI
@@ -51,7 +51,7 @@ INFO:     Application startup complete.
 - Handling form parameters
 - Managing cookies
 
-## Chapter 2
+## Chapter 2 - Exploring the Core Fatures
 - Technical requirements
 - Structuring and organizing huge projects
 - Managing API-related exception
@@ -60,3 +60,18 @@ INFO:     Application startup complete.
 - Creating background processes
 - Using asynchronous path operations
 - Applying middleware to filter path operations
+
+## Chapter 3 - Investigating Dependency Injection
+- Applying IoC/DI
+- Exploring ways of injecting dependencies
+- Organizing a project based on dependencies
+- Using third-party containers
+- Scoping of dependable
+
+## Chapter 4 - Building the Microservice Application
+- Applying the decomposition pattern
+- Mounting the submodules
+- Creating a common gateway
+- Implementing the main endpoint
+- Evaluating the microservice ID
+- Applying the exception handlers

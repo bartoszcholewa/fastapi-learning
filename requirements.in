@@ -9,3 +9,10 @@ fastapi[all]
 uvicorn
 python-multipart
 bcrypt
+
+# Chapter 3
+dependency-injector
+lagom
+
+# Chapter 4
+loguru

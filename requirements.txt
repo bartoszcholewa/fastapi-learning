@@ -23,6 +23,8 @@ click==8.1.3
     # via
     #   pip-tools
     #   uvicorn
+dependency-injector==4.41.0
+    # via -r requirements.in
 distlib==0.3.6
     # via virtualenv
 dnspython==2.2.1
@@ -58,6 +60,10 @@ itsdangerous==2.1.2
     # via fastapi
 jinja2==3.1.2
     # via fastapi
+lagom==2.2.0
+    # via -r requirements.in
+loguru==0.6.0
+    # via -r requirements.in
 markupsafe==2.1.1
     # via jinja2
 mccabe==0.7.0
@@ -96,7 +102,9 @@ pyyaml==6.0
 rfc3986[idna2008]==1.5.0
     # via httpx
 six==1.16.0
-    # via python-multipart
+    # via
+    #   dependency-injector
+    #   python-multipart
 sniffio==1.3.0
     # via
     #   anyio
