@@ -75,3 +75,7 @@ INFO:     Application startup complete.
 - Implementing the main endpoint
 - Evaluating the microservice ID
 - Applying the exception handlers
+- Centralizing te logging mechanism
+- Building the logging middleware
+- Using the httpx module
+- Using the requests module
