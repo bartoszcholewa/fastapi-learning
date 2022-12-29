@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from fastapi import FastAPI, HTTPException, Request, status
+from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse, PlainTextResponse
 from starlette.exceptions import HTTPException as GlobalStarletteHTTPException
@@ -28,7 +28,7 @@ async def log_transaction_filter(request: Request, call_next):
     qp_map = request.query_params
     pp_map = request.path_params
     with open("request_log.txt", mode="a") as reqfile:
-        content = f"method: {method_name}, query param: {qp_map}, path params: {pp_map} received at {start_time}"
+        content = f"method: {method_name}, query param: {qp_map}, path params: {pp_map} received at {start_time}\n"
         reqfile.write(content)
     response = await call_next(request)
     process_time = datetime.now() - start_time

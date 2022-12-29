@@ -1,6 +1,6 @@
 from datetime import datetime
 from typing import List
-from uuid import UUID
+from uuid import UUID, uuid1
 
 from fastapi import APIRouter, BackgroundTasks, status
 from fastapi.encoders import jsonable_encoder
@@ -8,8 +8,26 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
 from ch02.background import audit_log_transaction
+from ch02.places.destination import TourBasicInfo
 
 router = APIRouter()
+
+pending_users = dict()
+approved_users = dict()
+
+
+class Signup(BaseModel):
+    username: str
+    password: str
+    firstname: str
+    lastname: str
+    birthday: datetime
+
+
+class User(BaseModel):
+    id: UUID
+    username: str
+    password: str
 
 
 class Tourist(BaseModel):
@@ -26,7 +44,7 @@ async def login(login: User, bg_task: BackgroundTasks):
         signup_json = jsonable_encoder(approved_users[login.id])
         bg_task.add_task(audit_log_transaction, touristId=str(login.id), message="login")
         return JSONResponse(content=signup_json, status_code=status.HTTP_200_OK)
-    except:
+    except Exception:
         return JSONResponse(content={"message": "invalid operation"}, status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
@@ -45,16 +63,15 @@ async def signup(signup: Signup):
         tourist_json = jsonable_encoder(tourist)
         pending_users[userid] = tourist_json
         return JSONResponse(content=tourist_json, status_code=status.HTTP_201_CREATED)
-    except:
+    except Exception:
         return JSONResponse(content={"message": "onvalid operation"}, status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 @router.get("/ch02/user/login/{username}/{password}")
-async def login(username: str, password: str, bg_task: BackgroundTasks):
+async def login2(username: str, password: str, bg_task: BackgroundTasks):
     tourist_list = [
         tourist for tourist in approved_users.values()
-        if tourist['login']['username'] == username and
-           tourist['login']['password'] == password
+        if tourist['login']['username'] == username and tourist['login']['password'] == password
     ]
     if len(tourist_list) == 0 or tourist_list is None:
         return JSONResponse(content={"message": "invalid operation"}, status_code=status.HTTP_403_FORBIDDEN)
