@@ -1,6 +1,29 @@
+from datetime import datetime
+from typing import List
+from uuid import UUID, uuid1
+
 from fastapi import APIRouter, HTTPException, status
+from pydantic import BaseModel
+
+from ch02.login.user import approved_users
+from ch02.places.destination import TourBasicInfo, tours
 
 router = APIRouter()
+
+tour_preferences = set()
+
+
+class Visit(BaseModel):
+    id: UUID
+    destination: List[TourBasicInfo]
+    last_tour: datetime
+
+
+class Booking(BaseModel):
+    id: UUID
+    destination: TourBasicInfo
+    booking_date: datetime
+    tourist_id: UUID
 
 
 @router.get("/ch02/tourist/tour/booked")
@@ -12,7 +35,7 @@ def show_booked_tours(touristId: UUID):
 
 
 @router.post("/ch02/tourist/tour/booking/add")
-def create_booking(tour: TourBasicInfo, touristID: UUID):
+def create_booking(tour: TourBasicInfo, touristId: UUID):
     if approved_users.get(touristId) is None:
         raise HTTPException(status_code=500, detail="details are missing")
     booking = Booking(id=uuid1(),

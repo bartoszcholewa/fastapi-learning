@@ -1,8 +1,93 @@
+from datetime import datetime
+from enum import Enum, IntEnum
+from typing import List, NamedTuple
+from uuid import UUID
+
 from fastapi import APIRouter, Response
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
+from pydantic import BaseModel
 
 router = APIRouter()
+
+tours = dict()
+tours_basic_info = dict()
+tours_locations = dict()
+
+
+class StarRating(IntEnum):
+    one = 1
+    two = 2
+    three = 3
+    four = 4
+    five = 5
+
+
+class Post(BaseModel):
+    feedback: str
+    rating: StarRating
+    date_posted = datetime
+
+
+class Location(NamedTuple):
+    latitide: float
+    longitude: float = 0.0
+
+
+class TourType(str, Enum):
+    resort = "resort"
+    hotel = "hotel"
+    bungalow = "bungalow"
+    tent = "tent"
+    exclusive = "exclusive"
+
+
+class AmenitiesTypes(str, Enum):
+    restaurant = "restaurant"
+    pool = "pool"
+    beach = "beach"
+    shops = "shops"
+    bars = "bars"
+    activities = "activities"
+
+
+class TourInput(BaseModel):
+    name: str
+    city: str
+    country: str
+    type: TourType
+    location: Location
+    amenities: List[AmenitiesTypes]
+
+
+class Tour(BaseModel):
+    id: UUID
+    name: str
+    city: str
+    country: str
+    type: TourType
+    location: Location
+    amenities: List[AmenitiesTypes]
+    feedbacks: List[Post]
+    ratings: float
+    visits: int
+    isBooked: bool
+
+
+class TourBasicInfo(BaseModel):
+    id: UUID
+    name: str
+    type: TourType
+    amenities: List[AmenitiesTypes]
+    ratings: float
+
+
+class TourLocation(BaseModel):
+    id: UUID
+    name: str
+    city: str
+    country: str
+    location: Location
 
 
 @router.get("/ch02/destinations/mostbooked")
@@ -10,7 +95,7 @@ def check_recommended_tour(resp: Response):
     resp.headers['X-Access-Tours'] = 'TryUs'
     resp.headers['X-Contact-Details'] = '1900888TOLL'
     resp.headers['Content-Language'] = 'en-US'
-    ranked_desc_rates = sort_orders = sorted(tours.items(), key=lambda x: x[1].ratings, reverse=True)
+    ranked_desc_rates = sorted(tours.items(), key=lambda x: x[1].ratings, reverse=True)
     return ranked_desc_rates
 
 

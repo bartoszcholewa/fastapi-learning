@@ -4,6 +4,7 @@ from fastapi import APIRouter, status
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
 
+from ch02.login.user import approved_users
 from ch02.places.destination import (Tour, TourBasicInfo, TourInput,
                                      TourLocation, tours, tours_basic_info,
                                      tours_locations)
@@ -41,7 +42,7 @@ def add_tour_destination(input: TourInput):
         tours_locations[tid] = tour_location
         tour_json = jsonable_encoder(tour)
         return JSONResponse(content=tour_json, status_code=status.HTTP_201_CREATED)
-    except:
+    except Exception:
         return JSONResponse(content={"message": "invalid tour"}, status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
@@ -63,7 +64,7 @@ def update_tour_destination(tour: Tour):
         tours_basic_info[tid] = tour_basic_info
         tours_locations[tid] = tour_location
         return {"message": "tour updated"}
-    except:
+    except Exception:
         return {"message": "tour does not exist"}
 
 
