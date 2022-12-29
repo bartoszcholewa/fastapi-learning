@@ -98,3 +98,4 @@ INFO:     Application startup complete.
 - Creating the layers
 - Identifying the domain models
 - Building the repository and service layers
+- Managing a microservice's configuration details

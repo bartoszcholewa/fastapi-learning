@@ -18,3 +18,4 @@ lagom
 loguru
 httpx
 requests
+python-dotenv

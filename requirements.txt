@@ -95,7 +95,9 @@ pydantic==1.10.2
 pyflakes==3.0.1
     # via flake8
 python-dotenv==0.21.0
-    # via uvicorn
+    # via
+    #   -r requirements.in
+    #   uvicorn
 python-multipart==0.0.5
     # via
     #   -r requirements.in
