@@ -79,3 +79,6 @@ INFO:     Application startup complete.
 - Building the logging middleware
 - Using the httpx module
 - Using the requests module
+- Applying the domain modeling approach
+- Creating the layers
+- Identifying the domain models
