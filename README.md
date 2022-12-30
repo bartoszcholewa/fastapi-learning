@@ -99,3 +99,13 @@ INFO:     Application startup complete.
 - Identifying the domain models
 - Building the repository and service layers
 - Managing a microservice's configuration details
+
+## Chapter 5 - Connecting to a Relational Database
+
+- Preparing for database connectivity
+- Creating CRUD transactions using SQLAlchemy
+- Implementing async CRUD transactions using SQLAlchemy
+- Using GINO for async transactions
+- Using Pony ORM for the repository layer
+- Building the repository using Peewee
+- Applying the CQRS design pattern
