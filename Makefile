@@ -15,3 +15,6 @@ start3:
 
 start4:
 	cd ch04 && uvicorn main:app --reload
+
+start5:
+	cd ch05a && uvicorn main:app --reload

@@ -104,3 +104,4 @@ INFO:     Application startup complete.
 
 - Preparing for database connectivity
 - Creating CRUD transactions using SQLAlchemy
+- Implementing async CRUD transactions using SQLAlchemy

@@ -23,3 +23,5 @@ python-dotenv
 # Chapter 5
 SQLAlchemy
 psycopg2
+aiopg
+asyncpg

@@ -20,7 +20,7 @@ class Login(Base):
     date_approved = Column(Date, unique=True, index=False)
     user_type = Column(Integer, unique=False, index=False)
 
-    trainers = relationship('Profile_trainers', back_populates="login", uselist=False)
+    trainers = relationship('Profile_Trainers', back_populates="login", uselist=False)
     members = relationship('Profile_Members', back_populates="login", uselist=False)
 
 
