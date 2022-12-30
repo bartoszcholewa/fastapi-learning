@@ -108,3 +108,4 @@ INFO:     Application startup complete.
 - Using GINO for async transactions
 - Using Pony ORM for the repository layer
 - Building the repository using Peewee
+- Applying the CQRS design pattern

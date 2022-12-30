@@ -1,3 +1,5 @@
+from cqrs.commands import ProfileTrainerCommand
+from cqrs.trainers.command.create_handlers import AddTrainerCommandHandler
 from db_config.gino_connect import DB_URL, db
 from fastapi import APIRouter, Depends, status
 from fastapi.responses import JSONResponse
@@ -10,6 +12,26 @@ async def sess_db():
 
 
 router = APIRouter(dependencies=[Depends(sess_db)])
+
+
+@router.post("/trainer/add")
+async def add_trainer(req: ProfileTrainersReq):
+    handler = AddTrainerCommandHandler()
+    mem_profile = dict()
+    mem_profile["id"] = req.id
+    mem_profile["firstname"] = req.firstname
+    mem_profile["lastname"] = req.lastname
+    mem_profile["age"] = req.age
+    mem_profile["position"] = req.position
+    mem_profile["tenure"] = req.tenure
+    mem_profile["shift"] = req.shift
+    command = ProfileTrainerCommand()
+    command.details = mem_profile
+    result = await handler.handle(command)
+    if result is True:
+        return req
+    else:
+        return JSONResponse(content={'message': 'create trainer profile problem encountered'}, status_code=500)
 
 
 @router.patch('/trainer/update')
