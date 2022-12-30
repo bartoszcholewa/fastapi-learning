@@ -27,3 +27,4 @@ aiopg
 asyncpg
 gino
 pony
+peewee

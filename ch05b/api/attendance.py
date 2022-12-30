@@ -2,7 +2,7 @@ from db_config.sqlalchemy_async_connect import AsyncSessionFactory
 from fastapi import APIRouter
 from models.data.sqlalchemy_async_models import Attendance_Member
 from models.requests.attendance import AttendanceMemberReq
-from repository.aslalchemy.attendance import AttendanceRepository
+from repository.sqlalchemy.attendance import AttendanceRepository
 
 router = APIRouter()
 

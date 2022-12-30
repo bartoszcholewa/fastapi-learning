@@ -107,3 +107,4 @@ INFO:     Application startup complete.
 - Implementing async CRUD transactions using SQLAlchemy
 - Using GINO for async transactions
 - Using Pony ORM for the repository layer
+- Building the repository using Peewee
