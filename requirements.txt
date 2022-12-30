@@ -14,7 +14,9 @@ anyio==3.6.2
 async-timeout==4.0.2
     # via aiopg
 asyncpg==0.27.0
-    # via -r requirements.in
+    # via
+    #   -r requirements.in
+    #   gino
 bcrypt==4.0.1
     # via -r requirements.in
 build==0.9.0
@@ -46,8 +48,8 @@ filelock==3.8.2
     # via virtualenv
 flake8==6.0.0
     # via -r requirements.in
-greenlet==2.0.1
-    # via sqlalchemy
+gino==1.0.1
+    # via -r requirements.in
 h11==0.14.0
     # via
     #   httpcore
@@ -132,8 +134,10 @@ sniffio==1.3.0
     #   anyio
     #   httpcore
     #   httpx
-sqlalchemy==1.4.45
-    # via -r requirements.in
+sqlalchemy==1.3.24
+    # via
+    #   -r requirements.in
+    #   gino
 starlette==0.22.0
     # via fastapi
 tomli==2.0.1

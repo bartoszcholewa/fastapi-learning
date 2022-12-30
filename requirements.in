@@ -25,3 +25,4 @@ SQLAlchemy
 psycopg2
 aiopg
 asyncpg
+gino
