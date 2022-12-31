@@ -28,3 +28,6 @@ asyncpg
 gino
 pony
 peewee
+
+# Chapter 6
+pymongo

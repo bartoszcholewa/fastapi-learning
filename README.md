@@ -109,3 +109,8 @@ INFO:     Application startup complete.
 - Using Pony ORM for the repository layer
 - Building the repository using Peewee
 - Applying the CQRS design pattern
+
+# Chapter 6 - Using a Non-Relational Database
+
+- Setting up the database environment
+- Applying the PyMongo driver for synchronous connections

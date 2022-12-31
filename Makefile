@@ -21,3 +21,6 @@ start5a:
 
 start5b:
 	cd ch05b && uvicorn main:app --reload
+
+start6:
+	cd ch06 && uvicorn main:app --reload

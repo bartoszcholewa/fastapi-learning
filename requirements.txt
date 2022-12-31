@@ -39,7 +39,9 @@ dependency-injector==4.41.0
 distlib==0.3.6
     # via virtualenv
 dnspython==2.2.1
-    # via email-validator
+    # via
+    #   email-validator
+    #   pymongo
 email-validator==1.3.0
     # via fastapi
 fastapi[all]==0.88.0
@@ -112,6 +114,8 @@ pydantic==1.10.2
     # via fastapi
 pyflakes==3.0.1
     # via flake8
+pymongo==4.3.3
+    # via -r requirements.in
 python-dotenv==0.21.0
     # via
     #   -r requirements.in
