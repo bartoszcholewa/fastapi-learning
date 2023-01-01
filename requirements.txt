@@ -86,6 +86,8 @@ markupsafe==2.1.1
     # via jinja2
 mccabe==0.7.0
     # via flake8
+motor==3.1.1
+    # via -r requirements.in
 nodeenv==1.7.0
     # via pre-commit
 orjson==3.8.3
@@ -115,7 +117,9 @@ pydantic==1.10.2
 pyflakes==3.0.1
     # via flake8
 pymongo==4.3.3
-    # via -r requirements.in
+    # via
+    #   -r requirements.in
+    #   motor
 python-dotenv==0.21.0
     # via
     #   -r requirements.in
