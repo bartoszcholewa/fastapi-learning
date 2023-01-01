@@ -34,3 +34,4 @@ pymongo
 motor
 mongoengine
 beanie
+odmantic

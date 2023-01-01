@@ -117,3 +117,4 @@ INFO:     Application startup complete.
 - Creating async CRUD transactions using Motor
 - Implementing CRUD transactions using MongoEngine
 - Implementing async transactions using Beanie
+- Building async repository for FastAPI using ODMantic

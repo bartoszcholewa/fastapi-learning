@@ -97,8 +97,11 @@ motor==3.1.1
     # via
     #   -r requirements.in
     #   beanie
+    #   odmantic
 nodeenv==1.7.0
     # via pre-commit
+odmantic==0.9.1
+    # via -r requirements.in
 orjson==3.8.3
     # via fastapi
 packaging==22.0
@@ -126,6 +129,7 @@ pydantic==1.10.2
     #   beanie
     #   fastapi
     #   lazy-model
+    #   odmantic
 pyflakes==3.0.1
     # via flake8
 pymongo==4.3.3
@@ -133,6 +137,7 @@ pymongo==4.3.3
     #   -r requirements.in
     #   mongoengine
     #   motor
+    #   odmantic
 python-dotenv==0.21.0
     # via
     #   -r requirements.in
@@ -172,7 +177,9 @@ tomli==2.0.1
     #   build
     #   pep517
 typing-extensions==4.4.0
-    # via pydantic
+    # via
+    #   odmantic
+    #   pydantic
 ujson==5.6.0
     # via fastapi
 urllib3==1.26.13
