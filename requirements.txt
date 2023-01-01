@@ -86,6 +86,8 @@ markupsafe==2.1.1
     # via jinja2
 mccabe==0.7.0
     # via flake8
+mongoengine==0.25.0
+    # via -r requirements.in
 motor==3.1.1
     # via -r requirements.in
 nodeenv==1.7.0
@@ -119,6 +121,7 @@ pyflakes==3.0.1
 pymongo==4.3.3
     # via
     #   -r requirements.in
+    #   mongoengine
     #   motor
 python-dotenv==0.21.0
     # via

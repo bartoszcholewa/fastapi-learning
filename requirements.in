@@ -32,3 +32,4 @@ peewee
 # Chapter 6
 pymongo
 motor
+mongoengine

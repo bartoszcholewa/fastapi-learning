@@ -1,5 +1,6 @@
 DB_ENGINE = 'mongodb'
 DB_HOST = 'localhost'
+DB_NAME = 'fastapi_ch06'
 DB_PORT = 27017
 
 DATETIME_FORMAT = '%Y-%m-%dT%H:%M:%S'

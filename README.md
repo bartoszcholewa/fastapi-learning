@@ -115,3 +115,4 @@ INFO:     Application startup complete.
 - Setting up the database environment
 - Applying the PyMongo driver for synchronous connections
 - Creating async CRUD transactions using Motor
+- Implementing CRUD transactions using MongoEngine
