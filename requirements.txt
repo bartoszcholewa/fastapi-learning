@@ -21,6 +21,8 @@ bcrypt==4.0.1
     # via -r requirements.in
 beanie==1.16.6
     # via -r requirements.in
+blinker==1.5
+    # via mongoframes
 build==0.9.0
     # via pip-tools
 certifi==2022.12.7
@@ -47,6 +49,8 @@ dnspython==2.2.1
     #   pymongo
 email-validator==1.3.0
     # via fastapi
+faker==15.3.4
+    # via mongoframes
 fastapi[all]==0.88.0
     # via -r requirements.in
 filelock==3.8.2
@@ -93,6 +97,8 @@ mccabe==0.7.0
     # via flake8
 mongoengine==0.25.0
     # via -r requirements.in
+mongoframes==1.3.6
+    # via -r requirements.in
 motor==3.1.1
     # via
     #   -r requirements.in
@@ -136,8 +142,11 @@ pymongo==4.3.3
     # via
     #   -r requirements.in
     #   mongoengine
+    #   mongoframes
     #   motor
     #   odmantic
+python-dateutil==2.8.2
+    # via faker
 python-dotenv==0.21.0
     # via
     #   -r requirements.in
@@ -158,6 +167,7 @@ rfc3986[idna2008]==1.5.0
 six==1.16.0
     # via
     #   dependency-injector
+    #   python-dateutil
     #   python-multipart
 sniffio==1.3.0
     # via

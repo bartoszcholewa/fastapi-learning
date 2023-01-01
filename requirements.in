@@ -35,3 +35,4 @@ motor
 mongoengine
 beanie
 odmantic
+MongoFrames

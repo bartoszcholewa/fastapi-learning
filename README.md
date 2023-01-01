@@ -118,3 +118,4 @@ INFO:     Application startup complete.
 - Implementing CRUD transactions using MongoEngine
 - Implementing async transactions using Beanie
 - Building async repository for FastAPI using ODMantic
+- Creating CRUD transactions using MongoFrames
