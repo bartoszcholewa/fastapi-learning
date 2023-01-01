@@ -24,3 +24,9 @@ def json_serialize_oid(obj):
     elif isinstance(obj, date):
         return obj.isoformat()
     raise TypeError("The type %s not serializable." % type(obj))
+
+
+def json_serial(obj):
+    if isinstance(obj, (datetime, date)):
+        return obj.strftime(DATETIME_FORMAT)
+    raise TypeError("The type %s not serializable." % type(obj))

@@ -33,3 +33,4 @@ peewee
 pymongo
 motor
 mongoengine
+beanie

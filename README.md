@@ -116,3 +116,4 @@ INFO:     Application startup complete.
 - Applying the PyMongo driver for synchronous connections
 - Creating async CRUD transactions using Motor
 - Implementing CRUD transactions using MongoEngine
+- Implementing async transactions using Beanie
