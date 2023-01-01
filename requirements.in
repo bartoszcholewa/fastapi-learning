@@ -28,3 +28,11 @@ asyncpg
 gino
 pony
 peewee
+
+# Chapter 6
+pymongo
+motor
+mongoengine
+beanie
+odmantic
+MongoFrames

@@ -1,0 +1,93 @@
+import json
+from dataclasses import asdict
+from typing import Any, Dict
+
+from bson.json_util import dumps
+from models.data.pymongo_models import Buyer
+
+
+class BuyerRepository:
+
+    def __init__(self, buyers):
+        self.buyers = buyers
+
+    def insert_buyer(self, users, details: Dict[str, Any]) -> bool:
+        try:
+            user = users.find_one({"_id": details['user_id']})
+            if user is None:
+                return False
+            else:
+                self.buyers.insert_one(details)
+        except Exception as ex:
+            print(ex)
+            return False
+        return True
+
+    def add_purchase_history(self, id: int, details: Dict[str, Any]) -> bool:
+        try:
+            buyer = self.buyers.find_one({"buyer_id": id})
+            buyer['purchase_history'].append(details)
+            self.buyers.update_one(
+                {"buyer_id": id},
+                {"$set": {"purchase_history": buyer['purchase_history']}}
+            )
+        except Exception as ex:
+            print(ex)
+            return False
+        return True
+
+    def add_customer_status(self, id: int, details: Dict[str, Any]) -> bool:
+        try:
+            self.buyers.find_one({"buyer_id": id})
+            self.buyers.update_one(
+                {"buyer_id": id},
+                {"$set": {"customer_status": details}}
+            )
+        except Exception as ex:
+            print(ex)
+            return False
+        return True
+
+    def delete_purchase_history(self, id: int, hist_id: int) -> bool:
+        try:
+            buyer = self.buyers.find_one({"buyer_id": id})
+            history = [h for h in buyer['purchase_history'] if h['purchase_id'] == hist_id]
+            buyer['purchase_history'].remove(history[0])
+            self.buyers.update_one(
+                {'buyer_id': id},
+                {'$set': {'purchase_history': buyer['purchase_history']}}
+            )
+        except Exception as ex:
+            print(ex)
+            return False
+        return True
+
+    def delete_customer_status(self, id: int):
+        try:
+            self.buyers.update_one({"buyer_id": id}, {"$set": {"customer_status": None}})
+        except Exception:
+            return False
+        return True
+
+    def update_buyer(self, id: int, details: Dict[str, Any]) -> bool:
+        try:
+
+            self.buyers.update_one({"buyer_id": id}, {"$set": details})
+        except Exception:
+            return False
+        return True
+
+    def delete_buyer(self, id: int) -> bool:
+        try:
+            self.buyers.delete_one({"buyer_id": id})
+        except Exception:
+            return False
+        return True
+
+    def get_all_buyer(self):
+        buyers = [asdict(Buyer(**json.loads(dumps(b)))) for b in self.buyers.find()]
+        return buyers
+
+    def get_buyer(self, id: int):
+        buyer = self.buyers.find_one({"buyer_id": id})
+        return asdict(Buyer(**json.loads(dumps(buyer))))
