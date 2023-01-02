@@ -119,3 +119,7 @@ INFO:     Application startup complete.
 - Implementing async transactions using Beanie
 - Building async repository for FastAPI using ODMantic
 - Creating CRUD transactions using MongoFrames
+
+# Chapter 7 - Securing the REST APIs
+
+- Implementing Basic and Digest authentication
