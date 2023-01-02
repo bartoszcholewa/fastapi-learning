@@ -36,3 +36,6 @@ mongoengine
 beanie
 odmantic
 MongoFrames
+
+# Chapter 7
+passlib
