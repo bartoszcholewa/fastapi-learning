@@ -1,20 +1,8 @@
 from secrets import compare_digest
 
-from fastapi.security import HTTPBasic, HTTPBasicCredentials
-from models.data.sqlalchemy_models import Login
-from passlib.context import CryptContext
-
-http_basic = HTTPBasic()
-
-crypt_context = CryptContext(schemes=["sha256_crypt", "md5_crypt"])
-
-
-def get_password_hash(password: str):
-    return crypt_context.hash(password)
-
-
-def verify_password(plain_password: str, hashed_password: str):
-    return crypt_context.verify(plain_password, hashed_password)
+from common.models.database_models import Login
+from common.security.secure import verify_password
+from fastapi.security import HTTPBasicCredentials
 
 
 def authenticate(credentials: HTTPBasicCredentials, account: Login):
