@@ -1,14 +1,15 @@
 from datetime import date
 from typing import List
 
-from db_config.sqlalchemy_connect import session_db
+from ch07a.security.secure import authenticate
+from common.db_config.sqlalchemy_connect import session_db
+from common.models.database_models import Login, Signup
+from common.models.request_models import SignupRequest
+from common.repository import LoginRepository, SignupRepository
+from common.security.secure import get_password_hash, http_basic
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.responses import JSONResponse
 from fastapi.security import HTTPBasicCredentials
-from models.data.sqlalchemy_models import Login, Signup
-from models.request.signup import SignupRequest
-from repository.signup import LoginRepository, SignupRepository
-from security.secure import authenticate, get_password_hash, http_basic
 from sqlalchemy.orm import Session
 
 router = APIRouter()
