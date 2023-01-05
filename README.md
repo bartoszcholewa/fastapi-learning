@@ -123,3 +123,5 @@ INFO:     Application startup complete.
 # Chapter 7 - Securing the REST APIs
 
 - Implementing Basic and Digest authentication
+- Implementing password-based authentication
+-
