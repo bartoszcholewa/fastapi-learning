@@ -39,3 +39,4 @@ MongoFrames
 
 # Chapter 7
 passlib
+python-jose[cryptography]
