@@ -33,3 +33,6 @@ start7b:
 
 start7c:
 	cd ch07 && uvicorn main_c:app --reload
+
+start7d:
+	cd ch07 && uvicorn main_d:app --reload
