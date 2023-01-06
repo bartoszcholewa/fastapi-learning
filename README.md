@@ -125,3 +125,5 @@ INFO:     Application startup complete.
 - Implementing Basic and Digest authentication
 - Implementing password-based authentication
 - Applying JWTs
+- Creating scope-based authorization
+-

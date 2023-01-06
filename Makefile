@@ -36,3 +36,6 @@ start7c:
 
 start7d:
 	cd ch07 && uvicorn main_d:app --reload
+
+start7e:
+	cd ch07 && uvicorn main_e:app --reload
